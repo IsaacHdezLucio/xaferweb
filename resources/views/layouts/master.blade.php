@@ -41,4 +41,3 @@
 @include('partials.master.footer')
 </body>
 </html>
-
