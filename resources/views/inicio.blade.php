@@ -66,7 +66,7 @@
 
             // Retorna el botón dependiendo de la figura
             return Htmlbs::btnHtml($texto, [
-                'style' => "background-color: #FFF000; background-color: rgba(0, 0, 0, 0.5); color: white; border: none;
+                'style' => "background-color: #FFF000; background-color: #0000007F; color: white; border: none;
                     font-size: 24px; padding: 10px; cursor: pointer; height: 90%;
                     position: absolute; top: 50%; transform: translateY(-50%); $config[0];",
                 'onclick' => "moverSlide($config[1])",
