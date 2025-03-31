@@ -44,7 +44,7 @@ class KumbiaUtils
             $attrs = self::getAttrs($attrs);
         }
 
-        return '<a href="' . __DIR__ . "$action\" $attrs>$text</a>";
+        return '<a href="' . asset('') . "$action\" $attrs>$text</a>";
     }
 
     /**
