@@ -25,40 +25,16 @@
 {{-- Aquí se renderiza el contenido de la pagina --}}
 @yield('content')
 
-
-<style>
-    .image-container {
-        position: relative;
-        display: inline-block;
-    }
-
-    .image {
-        width: 100%; /* O el tamaño que desees */
-        height: auto;
-    }
-
-    .overlay-button {
-        position: absolute;
-        top: 50%; /* Centra el botón verticalmente */
-        left: 50%; /* Centra el botón horizontalmente */
-        transform: translate(-50%, -50%); /* Ajusta el botón para que se quede centrado */
-        background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente (opcional) */
-        color: white; /* Color del texto */
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .overlay-button:hover {
-        background-color: rgba(0, 0, 0, 0.8); /* Cambia color al pasar el mouse (opcional) */
-    }
-</style>
-
-
-<div class="image-container">
-    <?= KumbiaUtils::img('character_2.png', 'Sheryl', ['class' => 'image']) .
-    Htmlbs::btnHtml('Haz clic aquí', 'class="overlay-button"') ?>
+<div @style(['position: relative; display: inline-block;'])>
+    <?= KumbiaUtils::img('character_2.png', 'Sheryl', ['style' => 'width: 100%; height: auto;']) .
+    Htmlbs::btnHtml('Haz clic aquí', [
+            'style' => ' position: absolute; top: 50%; left: 50%;
+                transform: translate(-50%, -50%); background-color: #0000007F;
+                color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px;',
+            'onmouseover' => 'this.style.backgroundColor=\'#000000CC\'',
+            'onmouseout' => 'this.style.backgroundColor=\'#0000007F\''
+        ]
+    ) ?>
 </div>
 
 
