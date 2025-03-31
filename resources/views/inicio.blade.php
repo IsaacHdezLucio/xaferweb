@@ -70,8 +70,8 @@
                     font-size: 24px; padding: 10px; cursor: pointer; height: 90%;
                     position: absolute; top: 50%; transform: translateY(-50%); $config[0];",
                 'onclick' => "moverSlide($config[1])",
-                'onmouseover' => 'this.style.backgroundColor = "rgba(0, 0, 0, 0.8);',
-                'onmouseout' => 'this.style.opacity = "1";'
+                'onmouseover' => 'this.style.backgroundColor =\'#000000CC\'',
+                'onmouseout' => 'this.style.backgroundColor =\'#0000007F\''
             ]);
         } ?>
             <!-- Sección para el carrusel de imagenes -->
