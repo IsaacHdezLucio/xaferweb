@@ -26,16 +26,18 @@
 {{-- Aquí se renderiza el contenido de la pagina --}}
 @yield('content')
 
+{{--
 <div @style(['position: relative; display: inline-block;'])>
     <?= KumbiaUtils::img('character_2.png', 'Sheryl', ['style' => 'width: 100%; height: auto;']) .
-    Htmlbs::btnHtml('Haz clic aquí', [
-        'style' => ' position: absolute; top: 50%; left: 50%;
+Htmlbs::btnHtml('Haz clic aquí', [
+    'style' => ' position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%); background-color: #0000007F;
             color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px;',
-        'onmouseover' => 'this.style.backgroundColor=\'#000000CC\'',
-        'onmouseout' => 'this.style.backgroundColor=\'#0000007F\''
-    ]) ?>
-</div>
+    'onmouseover' => 'this.style.backgroundColor=\'#000000CC\'',
+    'onmouseout' => 'this.style.backgroundColor=\'#0000007F\''
+]) ?>
+    </div>
+--}}
 
 {{-- Sección footer --}}
 @include('partials.master.footer')
