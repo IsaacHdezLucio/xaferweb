@@ -6,10 +6,20 @@
 @extends('layouts.master' )
 @section('title', 'Pagina principal')
 
+<style>
+    * {
+        font-size: 110%;
+    }
+    @php
+        $px = 110;
+            $parrafos_stylo = ["margin-left: {$px}px; margin-right: {$px}px"];
+    @endphp
+</style>
+
 <!-- Sección donde se mostrará el contenido -->
 @section('content')
     <div @style(['text-align: center'])>
-        Hero Section
+        <!-- Hero Section -->
         <hr @style(['color: rgb(0, 0, 0, 0.5); padding-bottom: 1px; width: 50%;'])>
         <div @style(['position: relative; height: 250px; overflow: hidden; display: flex; justify-content: center; align-items: center; '])>
         <span @style(['display: block; width: 100%;'])>
@@ -17,12 +27,15 @@
         </span>
         </div>
         <div>
-            Menú de opciones
+            <!-- Menú de opciones -->
             <div @style(['display: flex; justify-content: space-between;'])>
+                @php
+                    $texto = ['Servicios', 'Productos'];
+                @endphp
                 @for($i = 1; $i <= 2; $i++)
                     <div @style(['padding: 50px'])>
-                            <?= KumbiaUtils::link('productos', 'Pestaña/Botón de productos', [
-                            'style' => 'text-decoration: none; padding: 10px 20px;
+                            <?= KumbiaUtils::link('productos', $texto[$i - 1], [
+                            'style' => 'text-decoration: none; padding: 20px 30px;
                                         background-color: #4CAF50; color: white;
                                         border: none; border-radius: 5px; cursor: pointer;',
                             'onmouseover' => 'this.style.backgroundColor=\'#45a049\'',
@@ -37,13 +50,16 @@
     <hr>
     <!-- Sección de los productos -->
     <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est
-            laborum.
+        <div id="historia" @style(['text-align: center;'])>
+            <h3>HISTORIA</h3>
+            <p @style($parrafos_stylo)>
+                XAFER nace el 30 de mayo de 2016, se crea por el crecimiento de la Industria y por la preferencia de
+                nuestros
+                clientes, además de implementar grandes alcances técnicos y comerciales aunados a un servicio
+                profesional
+                con más de 20 años de experiencia en la rama de productos y servicios.
+            </p>
+        </div>
         <hr>
         <?php
         function attrs(array|string $values): string
@@ -75,7 +91,7 @@
             ]);
         } ?>
             <!-- Sección para el carrusel de imagenes -->
-        <h1 @style(['text-align: center'])>Linea de productos</h1>
+        <h1 @style(['text-align: center; font-size:400%;'])>Linea de productos</h1>
 
         <!-- Botones e imagenes -->
         <div @style(['justify-content: space-between; position: relative;'])>
@@ -98,6 +114,30 @@
                 <?= btnSlider('&#10095;') ?>
             </div>
             <hr>
+        </div>
+        <div @style(['padding-bottom: 120px; text-align: center']) id="acercade">
+            <h3>VISIÓN</h3>
+            <p @style($parrafos_stylo)>
+                Ser una empresa de excelencia en lubricación y automatización siendo una de las más avanzadas para ser
+                la
+                mejor opción de nuestros clientes en sus requerimientos, ser competitivos aplicando la fortaleza de
+                nuestros
+                valores para lograr una imagen social y técnica altamente reconocida.
+            </p>
+            <h3>MISIÓN</h3>
+            <p @style($parrafos_stylo)>
+                Proporcionar productos y servicios de calidad buscando siempre la satisfacción del cliente, teniendo en
+                cuenta
+                el medio ambiente, ecología y Certificaciones de servicios, cumpliendo los más estrictos estándares de
+                calidad.
+            </p>
+            <h3>POLÍTICA DE CALIDAD</h3>
+            <p @style($parrafos_stylo)>
+                En XAFER estamos comprometidos con el cumplimiento de los requerimientos y las necesidades de nuestros
+                clientes, superando sus expectativas a través de un proceso de mejora continua de nuestro sistema de
+                gestión
+                de calidad basado en la norma ISO 9000:2008.
+            </p>
         </div>
 
         <script type="text/javascript">
